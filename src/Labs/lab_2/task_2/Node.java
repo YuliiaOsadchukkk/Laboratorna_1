@@ -1,28 +1,33 @@
 package Labs.lab_2.task_2;
+import java.util.Iterator;
 
 public class Node {
 
-    public int data;       // integer data
-    public Node next;      // pointer to the next node
+    public int value;
+    public Node next;
+
 
     public Node() {
     }
 
-    public Node(final int node, final Node text) {
-        this.data = data;
+    public Node(final int value, final Node next) {
+        this.value = value;
         this.next = null;
     }
 
-    public int getData() {
-        return data;
+    public int getValue() {
+        return value;
     }
 
-    public void setData(int data) {
-        this.data = data;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public Node getNext() {
         return next;
     }
 
+    public void setNext(final Node next) {
+        this.next = next;
+    }
 }

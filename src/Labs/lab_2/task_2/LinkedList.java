@@ -1,19 +1,19 @@
 package Labs.lab_2.task_2;
-
 import java.util.Iterator;
 
-public class LinkedList implements Stack {
-//, Iterable<Integer>
-
+    public class LinkedList implements Stack {
     private Node top;
 
-    public LinkedList(final Node top) {
-        this.top = top;
-    }
+        //Iterable<Integer>
 
     public LinkedList() {
         this.top = null;
     }
+    public LinkedList(final Node top) {
+        this.top = top;
+    }
+
+
 
     @Override
     public int size() {
@@ -31,9 +31,8 @@ public class LinkedList implements Stack {
     }
 
     @Override
-    public void push(int data) // insert at the beginning
+    public void push(int value)
     {
-        // create new node temp and allocate memory
         Node temp = new Node();
 
         // check if stack (heap) is full. Then inserting an
@@ -44,7 +43,7 @@ public class LinkedList implements Stack {
         }
 
         // initialize data into temp data field
-        temp.data = data;
+        temp.value = value;
 
         // put top reference into temp link
         temp.next = top;
@@ -62,7 +61,7 @@ public class LinkedList implements Stack {
     public int peek() {
         // check for empty stack
         if (!isEmpty()) {
-            return top.data;
+            return top.value;
         }
         else {
             System.out.println("Stack is empty");

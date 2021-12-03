@@ -1,25 +1,33 @@
 package Labs.lab_2.task_3;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
-//    private static Object Subject;
-//    private static Object Grade;
+    public static void main(final String[] args) {
 
-    public static void main(final String... args) {
+        final List<Subject> listOfSubjects = new ArrayList<>();
+        final Subject chemistry = new Subject("Chemistry");
+        final Subject history = new Subject("History");
+        listOfSubjects.add(chemistry);
+        listOfSubjects.add(history);
 
-        Map<Subject,Mark> markMap = new HashMap<>();
-
-        final Student student1 = new Student("Yuliia", "Osadchuk", 2, "IT",markMap ,215011);
-
-        System.out.println(student1);
-
-        markMap.put(new Subject("Programing"),new Mark(5));
-        markMap.put(new Subject("English"),new Mark(3));
-        markMap.put(new Subject("Math"),new Mark(5));
-        System.out.println(markMap);
-
+        final Student student = new Student("Yuliia", "Osadchuk", 2 ,15461827,"IT", listOfSubjects, random(listOfSubjects));
+        System.out.println(student);
 
     }
+
+    public static List<Mark> random(final List<Subject> listOfSubjects){
+        final List<Mark> listOfMarks = new ArrayList<>();
+
+        for (int i = 0; i < listOfSubjects.size(); i++) {
+
+            final int num = (int) (Math.random() * (5 - 1) + 1);
+            final Mark mark = new Mark(num);
+            listOfMarks.add(mark);
+
+        }
+        return listOfMarks;
+    }
+
 }

@@ -1,25 +1,21 @@
 package Labs.lab_2.task_3;
 
-import java.util.Arrays;
 
 public class Subject {
 
-    private String sub;
+    private String subject;
 
     public Subject(final String subject){
-        this.sub = subject;
+        this.subject = subject;
     }
 
     public String getSubject() {
-
-        return sub;
+        return subject;
     }
 
     public void setSubject(final String subject) {
-
-        this.sub = this.sub;
+        this.subject = this.subject;
     }
-
 
     @Override
     public boolean equals(final Object o) {
@@ -27,7 +23,7 @@ public class Subject {
         {
             if (o == null || getClass() != o.getClass()) return false;
             final Subject s = (Subject) o;
-            return sub == s.sub ;
+            return subject == s.subject ;
         }
     }
 
@@ -35,8 +31,10 @@ public class Subject {
     public int hashCode() {
         return 17 * this.getSubject().hashCode() ;
     }
+
+    @Override
     public String toString() {
-        return   "Subject is " + sub ;
+        return   " " + getSubject() ;
     }
 }
 

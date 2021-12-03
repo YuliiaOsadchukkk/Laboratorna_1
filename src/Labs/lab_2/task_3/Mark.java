@@ -1,8 +1,5 @@
 package Labs.lab_2.task_3;
 
-import java.util.List;
-import java.util.Objects;
-
 public class Mark {
     private int mark;
 
@@ -12,23 +9,23 @@ public class Mark {
     }
 
     public int getMark() {
-
         return mark;
     }
 
     public void setMark(final int mark) {
-
-        if(mark > 1 && mark <5) this.mark = mark;
+        if(mark >= 1 && mark <=5)
+            this.mark = mark;
         else
-            System.out.println("Invalid age");
+            System.out.println("Invalid mark");
     }
+
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
         {
             if (o == null || getClass() != o.getClass()) return false;
-            final Mark g = (Mark) o;
-            return mark == g.mark;
+            final Mark m = (Mark) o;
+            return getMark() == m.getMark();
         }
     }
 
@@ -39,6 +36,6 @@ public class Mark {
 
     @Override
     public String toString() {
-        return "Mark is " + mark ;
+        return "" + getMark();
     }
 }

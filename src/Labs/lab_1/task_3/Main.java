@@ -15,6 +15,7 @@ public class Main {
     public static String Mix(final int[] numbers, final char[] characters) {
         String s = "";
         final int size = numbers.length + characters.length;
+
         for (int i = 0; i < size; i++) {
             if (i < numbers.length)
                 s += numbers[i];
